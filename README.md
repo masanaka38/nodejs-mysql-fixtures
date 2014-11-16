@@ -12,7 +12,7 @@ node.js mysql-fixtures module.
 ### sample_fixtures.js
 
 	var MySQLFixtures = require('mysql-fixtures');
-	
+
 	var config = {
         "host": "localhost",
         "user": "root",
@@ -20,10 +20,10 @@ node.js mysql-fixtures module.
         "database": "sample"
     };
 	var fixtures = MySQLFixtures.createFixtures(config);
-	
-	fixtures.create('fixtures/data.yaml', function() {}
+
+	fixtures.create('fixtures/data.yaml', function() {
 		console.log('finish.');
-	));
+	});
 
 ### fixtures/data.yaml
 	user:
@@ -31,23 +31,23 @@ node.js mysql-fixtures module.
 			user_id : 1,
 			name : 'Taro',
 			age : 25
-		
+
 		u2:
 			user_id : 2,
 			name : 'Jiro',
 			age : 19
-	
+
 	item:
 		i1:
 			item_id : 10,
-			name : 'abcdef'	
+			name : 'abcdef'
 
 ## Example(Helper)
 
 ### sample_helper.js
 
 	var MySQLFixtures = require('mysql-fixtures');
-	
+
 	var config = {
         "host": "localhost",
         "user": "root",
@@ -55,10 +55,10 @@ node.js mysql-fixtures module.
         "database": "sample"
     };
 	var helper = MySQLFixtures.createHelper(config);
-	
-	helper.assert('select * from user order user_id', 'result/data.yaml', function() {}
+
+	helper.assert('select * from user order user_id', 'result/data.yaml', function() {
 		console.log('finish.');
-	));
+	});
 
 ### result/data.yaml
 
@@ -66,7 +66,7 @@ node.js mysql-fixtures module.
 		user_id : 1,
 		name : 'Taro',
 		age : 25
-	
+
 	u2:
 		user_id : 2,
 		name : 'Jiro',
